@@ -45,6 +45,20 @@ function playRound(playerSelection, computerSelection){
     }
     else {return "Not a valid element"}
 }
+function buttonactivate(){
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', function(e){
+        console.log(e);
+    });
+});
+};
+
+const buttonQ = document.querySelector('first');
+buttonQ.addEventListener('click', function(e){
+    console.log(e);
+})
 
 
 
@@ -52,7 +66,7 @@ function game(){
     playerScore = 0;
     computerScore = 0;
     roundResult = '';
-    for (let noRounds = 0; noRounds < 6; noRounds++){
+    for (let noRounds = 0; noRounds < 600; noRounds++){
         playerSelection = prompt()
         roundResult = playRound(playerSelection, getComputerChoice());
         console.log(roundResult);
@@ -74,4 +88,6 @@ function game(){
         }
     }
 }
-console.log(game());
+//console.log(game());
+
+buttonactivate();
