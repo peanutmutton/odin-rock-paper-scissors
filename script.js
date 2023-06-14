@@ -1,4 +1,10 @@
 
+
+
+
+
+
+
 choices = ["Rock", "Paper", "Scissors"];
 
 function getComputerChoice() {
@@ -45,23 +51,26 @@ function playRound(playerSelection, computerSelection){
     }
     else {return "Not a valid element"}
 }
-function buttonactivate(){
+
+
+
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
-    button.addEventListener('click', function(e){
-        console.log(e);
+    button.addEventListener('click', () => {
+        console.log(playRound(button.textContent, getComputerChoice()));
     });
 });
-};
-
-const buttonQ = document.querySelector('first');
-buttonQ.addEventListener('click', function(e){
-    console.log(e);
-})
 
 
+//const buttonQ = document.querySelector('#second');
+//buttonQ.addEventListener('click', playRound("Paper", "Rock") );
 
+/*
+
+*/
+
+/*
 function game(){
     playerScore = 0;
     computerScore = 0;
@@ -90,4 +99,8 @@ function game(){
 }
 //console.log(game());
 
+
+
 buttonactivate();
+
+*/
