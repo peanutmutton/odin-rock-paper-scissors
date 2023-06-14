@@ -52,13 +52,22 @@ function playRound(playerSelection, computerSelection){
     else {return "Not a valid element"}
 }
 
-
+const results = document.querySelector('#results')
 
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(playRound(button.textContent, getComputerChoice()));
+        results.textContent = playRound(button.textContent, getComputerChoice());
+        if (results.textContent.includes("You win")){
+            results.style.background = "green";
+        }
+        else if(results.textContent.includes("You lose")){
+            results.style.background = "red";
+        }
+        else if(results.textContent.includes("Draw")){
+            results.style.background = "yellow";
+        }
     });
 });
 
